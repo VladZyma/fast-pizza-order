@@ -1,21 +1,18 @@
-import {useState} from 'react';
+import CreateUser from '../features/user/CreateUser';
 
 function Home() {
-  const [name, setName] = useState('');
-
   return (
-    <div>
-      <h1>
+    <div className="my-16 px-4 text-center sm:my-10">
+      <h1 className="mb-8 text-xl font-semibold md:text-3xl">
         The best pizza.
-        <br/>
-        Straight out of the oven, straight to you. 
+        <br />
+        <span className="text-yellow-500">
+          Straight out of the oven, straight to you.
+        </span>
       </h1>
-      <p>👋 Welcome! Please start by telling us your name:</p>
-
-      <input type='text' placeholder='Your full name' value={name} onChange={(e) => setName(e.target.value)}/>
-      <button>START ORDERING</button>
+      <CreateUser />
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

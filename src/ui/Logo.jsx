@@ -1,8 +1,8 @@
+import {Link} from 'react-router-dom';
+
 function Logo() {
   return (
-    <div>
-      <p>fast pizza order</p>
-    </div>
+    <Link className='tracking-widest' to='/'>fast pizza order</Link>
   )
 }
 

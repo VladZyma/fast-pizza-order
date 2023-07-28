@@ -36,6 +36,9 @@ const cartSlice = createSlice({
       //payload = pizzaId
       state.cart = state.cart.filter((item) => item.pizzaId !== action.payload);
     },
+    clearCart(state) {
+      state.cart = [];
+    },
   },
 });
 
@@ -44,6 +47,7 @@ export const {
   increaseItemQuantity,
   decreaseItemQuantity,
   deleteItem,
+  clearCart,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

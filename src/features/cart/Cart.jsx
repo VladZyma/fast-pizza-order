@@ -3,12 +3,15 @@ import { useSelector } from 'react-redux';
 import LinkButton from '../../ui/LinkButton';
 import Button from '../../ui/Button';
 import CartItem from './CartItem';
+import EmptyCart from './EmptyCart';
 //cart actions
 import { getCart } from './cartSlice';
 
 function Cart() {
   const username = useSelector((state) => state.user.userName);
   const cart = useSelector(getCart);
+
+  if (!cart.length) return <EmptyCart />;
 
   return (
     <div className="py3 px-4">

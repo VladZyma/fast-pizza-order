@@ -2,6 +2,7 @@ import { useLoaderData, useFetcher } from 'react-router-dom';
 import { useEffect } from 'react';
 
 import OrderItem from './OrderItem';
+import UpdateOrder from './UpdateOrder';
 import { getOrder } from '../../services/apiRestaurant';
 //helpers
 import {
@@ -87,6 +88,8 @@ function Order() {
           To pay on delivery: {formatCurrency(orderPrice + priorityPrice)}
         </p>
       </div>
+
+      {!priority && <UpdateOrder order={order} />}
     </div>
   );
 }

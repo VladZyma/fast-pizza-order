@@ -12,10 +12,14 @@ const cartSlice = createSlice({
       console.log('ddddd');
       state.cart.push(action.payload);
     },
+    deleteItem(state, action) {
+      //payload = id
+      state.cart = state.cart.filter((item) => item.pizzaId !== action.payload);
+    },
   },
 });
 
-export const { addItem } = cartSlice.actions;
+export const { addItem, deleteItem } = cartSlice.actions;
 
 export default cartSlice.reducer;
 

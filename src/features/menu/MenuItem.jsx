@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 import Button from '../../ui/Button';
+import DeleteItem from '../cart/DeleteItem';
 //helpers
 import { formatCurrency } from '../../utils/helpers';
 //cart actions
-import { addItem, getCart } from '../cart/cartSlice';
+import { addItem, getCart, deleteItem } from '../cart/cartSlice';
 
 function MenuItem({ pizza }) {
   const dispatch = useDispatch();
@@ -55,7 +56,7 @@ function MenuItem({ pizza }) {
             </Button>
           )}
 
-          {isItemInCart && <Button type="small">Delete</Button>}
+          {isItemInCart && <DeleteItem pizzaId={id} />}
         </div>
       </div>
     </li>
